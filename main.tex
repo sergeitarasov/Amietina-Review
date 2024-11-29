@@ -14,8 +14,34 @@
 \usepackage{hyperref}
 \usepackage{natbib}
 
-%  ----- Extra packages
+
+%-----------------------------------------
+%----- Extra packages to use Markdown 
 \usepackage[footnotes,definitionLists,hashEnumerators,smartEllipses, hybrid]{markdown}
+
+% define your color
+\definecolor{my_url}{RGB}{51, 122, 183}
+
+%  remove enumeration from headings
+\setcounter{secnumdepth}{0} 
+
+%  set up color options for links
+\hypersetup{
+    colorlinks=true,
+    linkcolor=purple,
+    filecolor= purple,
+    citecolor=purple,
+    urlcolor=my_url,
+    % pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+
+%  make markdown url links colored
+\markdownSetup{
+renderers={
+  link = {\href{#3}{#1}}
+}}
+%-----------------------------------------
 
 
 
