@@ -18,7 +18,7 @@ OTU = { #// OTUName:  Amietina mazumbaiensis
                 - uberon-adult_organism
                 - dwc-Preserved_Specimen
         #<<<YAML
-        
+
     }
 
   TRAITS = {
@@ -29,7 +29,7 @@ OTU = { #// OTUName:  Amietina mazumbaiensis
   
     # Body lenticular, black, shiny, covered with pale yellowish setae.
     this >> (pato-ovate, pato-black, pato-glistening);
-    this -> uberon-anatomical_collection .ro-has_member aism-cuticular_seta >> pato-light_yellow; 
+    this > aism-insect_region_of_cuticle -> uberon-anatomical_collection .ro-has_member aism-cuticular_seta >> pato-light_yellow; 
 
     # Length: 5.0 mm.
     #>>>YAML absolute_measurement
@@ -121,7 +121,7 @@ OTU = { #// OTUName:  Amietina mazumbaiensis
     #--------
 
     # Wider than pronotum;
-    this > colao-elytron:id-d1df04 >> pato-width |>| pato-width:id-db5ade << aism-pronotum:id-4e6a38; #/ it means 1 elytron is wider than relative measurement
+    this > colao-elytron:id-d1df04 >> pato-width |>| pato-width:id-db5ade << aism-pronotum:id-4e6a38;
     
     # striae clearly impressed, in number of 8;
         colao-elytron:id-d1df04 > uberon-anatomical_collection .ro-has_member colao-elytral_stria:id-f09fcd >> pato-increased_depth;
