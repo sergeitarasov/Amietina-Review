@@ -1,23 +1,24 @@
 
-# Description of Amietina grebennikovi Montanaro & Tarasov, n. sp.
+# Description of Amietina grebennikovi Montanaro & Tarasov, n. sp. based on the male holotype
 
 
 OTU = { #// OTUName:  Amietina grebennikovi
 
     DATA = {
-        #>>>YAML new_species
-        new_species:
-            .id: amietina_mazumbaiensis
-            .rdfs-label: 'Amietina mazumbaiensis'
-            .zoobank_id: 'https://zoobank.org/430CF1ED-102D-4F86-9888-FC8452E59480'
-            .dwc-Parent_Name_Usage_ID: 'https://www.gbif.org/species/1093478'
+
+        #>>>YAML described_species
+        described_species:
+            .id: amietina_grebennikovi
+            .rdfs-label: 'Amietina grebennikovi'
+            .gbif_id: 'urn:lsid:zoobank.org:act:352E8138-107D-477F-A6FA-B8215B26BC52' #/ valid one
             .dwc-Catalog_Number:
-                - 'http://id.luomus.fi/GZ.15821'
+                - 'http://id.luomus.fi/GAC.37187'  #/ get one and change!
             .is_a:
                 - uberon-male_organism
                 - uberon-adult_organism
                 - dwc-Preserved_Specimen
         #<<<YAML
+
     }
 
   TRAITS = {
@@ -30,12 +31,12 @@ OTU = { #// OTUName:  Amietina grebennikovi
     this >> (pato-ovate, pato-black, pato-glistening);
     this -> uberon-anatomical_collection .ro-has_member aism-cuticular_seta >> pato-light_yellow; 
 
-    # Length: 5.0 mm.
+    # Length: 3.2 mm.
     #>>>YAML absolute_measurement
     absolute_measurement:
         .measured_entity: this
         .measured_quality: pato-length
-        .value: 3.7
+        .value: 3.2
         .unit: unit-millimeter
     #<<<YAML
     
@@ -74,8 +75,8 @@ OTU = { #// OTUName:  Amietina grebennikovi
         bspo-anterior_region:id-903e0d > uberon-anatomical_collection:id-ffac39 .ro-has_member aism-cuticular_puncture;
         uberon-anatomical_collection:id-ffac39 >> aism-interpunctural_distance |<| aism-interpunctural_distance:id-012c4b;
 
-    # Frons bearing a slightly bilobed tubercle placed between the anterior margins of eyes.
-        aism-insect_head:id-033849 > aism-frons > aism-cuticular_tubercle:id-35d1b8 >> pato-bilobed;
+    # Frons bearing an ogival tubercle placed between the anterior margins of eyes.
+        aism-insect_head:id-033849 > aism-frons > aism-cuticular_tubercle:id-35d1b8 >> (pato-arched, aism-obtusely_angular);
         aism-cuticular_tubercle:id-35d1b8 .ro-coincident_with caro-anatomical_line:id-694058 .ro-coincident_with bspo-anterior_margin < aism-eye_cuticle < this;
         caro-anatomical_line:id-694058 >> pato-transverse_orientation;
 
@@ -101,7 +102,7 @@ OTU = { #// OTUName:  Amietina grebennikovi
         aism-pronotum:id-4e6a38 > uberon-anatomical_collection:id-d08d08 .ro-has_member aism-simple_setigerous_cuticular_puncture:id-a14c98;
         aism-simple_setigerous_cuticular_puncture:id-5779b8 >> pato-diameter:id-64eb88 |>| pato-diameter << aism-simple_setigerous_cuticular_puncture:id-a14c98;
 
-    # the largest ones separated by approximately 2 diameters on disc.
+    # the largest ones separated by approximately 3 diameters on disc.
 
         #>>>YAML relative_measurement
         relative_measurement:
@@ -111,7 +112,7 @@ OTU = { #// OTUName:  Amietina grebennikovi
           .unit:
             .entity: aism-simple_setigerous_cuticular_puncture:id-5779b8
             .quality: pato-diameter:id-64eb88
-          .value: 2
+          .value: 3
         #<<<YAML
 
 
@@ -120,7 +121,7 @@ OTU = { #// OTUName:  Amietina grebennikovi
     #--------
 
     # Wider than pronotum;
-    this > colao-elytron:id-d1df04 >> pato-width |>| pato-width:id-db5ade << aism-pronotum:id-4e6a38; #/ it means 1 elytron is wider than relative measurement
+    this > colao-elytron:id-d1df04 >> pato-width |>| pato-width:id-db5ade << aism-pronotum:id-4e6a38;
     
     # striae clearly impressed, in number of 8;
         colao-elytron:id-d1df04 > uberon-anatomical_collection .ro-has_member colao-elytral_stria:id-f09fcd >> pato-increased_depth;
@@ -195,14 +196,17 @@ OTU = { #// OTUName:  Amietina grebennikovi
     # Parameres symmetrical, elongated, apices sharp and bent ventrally in lateral view;
     this > aism-parameres:id-bf6f3c >> (pato-elongated, pato-symmetrical);
         aism-parameres:id-bf6f3c > bspo-postero-ventral_region:id-31b50d >> (pato-sharp, pato-ventral_orientation);
-    
-    # apices slightly sinuated laterally in frontal view.
-    bspo-postero-ventral_region:id-31b50d >> aism-obtusely_notched;
 
-    # Endophallus with 2 clearly sclerified raspulae; 
-    this > aism-endophallus:id-4caf81 > colao-raspula .phs-has_element_count 2;
+    # ventral margin of paramere feebly curved in lateral view;
+        aism-parameres:id-bf6f3c > bspo-ventral_margin >> pato-concave .ro-has_modifier pato-decreased_magnitude;
     
-    # lamella copulatrix present, composed of 3 branches.
+    # apices not sinuated laterally in frontal view.
+    bspo-postero-lateral_region:id-31b50d >> pato-straight;
+
+    # Endophallus with 3 clearly sclerified raspulae; 
+    this > aism-endophallus:id-4caf81 > colao-raspula .phs-has_element_count 3;
+    
+    # lamella copulatrix present, composed of 3 sclerites.
         aism-endophallus:id-4caf81 > colao-lamella_copulatrix > aism-endophallite .phs-has_element_count 3;
     
     }
