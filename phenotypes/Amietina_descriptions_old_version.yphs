@@ -1,0 +1,161 @@
+
+#Descriptions of Amietina grebennikovi Montanaro & Tarasov, n. sp. and Amietina mazumbaiensis Montanaro & Tarasov, n. sp.
+
+
+OTU = { #// OTUName:  Amietina grebennikovi
+
+#Description based on the holotype (male)
+
+  DATA = {
+    uberon-male_organism:amietina_grebennikovi[this = True, linksTraits = True, cls = 'uberon-adult_organism', cls = 'dwc-Preserved_Specimen'] .rdfs-label 'org_Amietina grebennikovi';
+    uberon-male_organism:amietina_grebennikovi .dwc-Catalog_Number 'luomusidofspecimen'; #/ ADD ID
+    uberon-male_organism:amietina_grebennikovi .ro-has_role_in_modeling cdao-TU .iao-denotes taxrank-species:id-6cad3e;
+        
+    taxrank-species:id-6af39d .dwc-Taxon_ID_taxonID 'specieszoobankid';  #/ ADD ID
+    taxrank-species:id-6af39d .dwc-Parent_Name_Usage_ID 'https://www.gbif.org/species/1086967';
+    taxrank-species:id-6af39d .rdfs-label 'Amietina grebennikovi';
+    }
+
+
+  TRAITS = {
+    #Body.
+    #Ovate;
+    this >> pato-ovate;
+    #cuticle black, shiny;
+    this > uberon-chitin-based_cuticle:id-a834c9 >> (pato-black, pato-glistening);
+    #entirely covered with yellowish brown setae.
+        uberon-chitin-based_cuticle:id-a834c9 -> aism-cuticular_seta >> pato-yellow_brown;
+    #Length: 4.3 mm.
+    this >> pato-length .iao-is_quality_measured_as iao-measurement_datum:id-658a97 .aism-has_unit unit-millimeter;
+																					iao-measurement_datum:id-658a97 .iao-has_measurement_value 4.3;
+
+    #Head.
+    #Subpentagonal; 
+    this > aism-head_capsule:id-813102 >> pato-pentagonal;
+    #anterior margin of clypeus tapering, with two teeth separated by an obtuse angle;
+        aism-head_capsule:id-813102 > bspo-anterior_region >> pato-attenuate;
+    this > clypeus > aism-lateral_clypeal_tooth_1;
+    this > aism-clypeal_margin_between_clypeal_teeth_1 >> pato-obtuse;
+    #entirely covered with simple setigerous punctures;
+    this > aism-punctate_cuticle:id-c6ba94 > aism-simple_setigerous_cuticular_puncture >> pato-multiple;
+    #punctures separated by approximately 1 diameter posteriorly, denser, deeper and almost rugose anteriorly.
+        aism-punctate_cuticle:id-c6ba94 > bspo-posterior_region:id-322fb4 >> aism-interpunctural_distance:id-676edf .iao-is_quality_measured_as iao-measurement_datum:id-5aa8de .aism-has_unit pato-diameter << aism-simple_setigerous_cuticular_puncture:id-32744e < bspo-posterior_region:id-322fb4;
+																					iao-measurement_datum:id-5aa8de .iao-has_measurement_value 1.0;
+        aism-interpunctural_distance:id-676edf |<| aism-interpunctural_distance < bspo-anterior_region:id-12ed48 < aism-punctate_cuticle:id-c6ba94;
+        bspo-anterior_region:id-12ed48 > aism-simple_setigerous_cuticular_puncture >> pato-depth |>| pato-depth << aism-simple_setigerous_cuticular_puncture:id-32744e;
+        bspo-anterior_region:id-12ed48 >> pato-rugose;
+    #Frons bearing a transverse tubercle placed between the anterior margins of eyes.
+    this > aism-frons > aism-cuticular_tubercle:id-cb924b >> pato-transverse_orientation;
+        aism-cuticular_tubercle:id-cb924b .ro-adjacent_to aism-line_connecting_anterior_margins_of_eyes < this;
+    #Antennae yellowish brown, with 8 segments.
+    this > aism-antenna_with_8_antennomeres >> pato-red_brown;
+    #Glossa, maxilla and epipharynx present;
+    this > (aism-glossa, aism-epipharynx, aism-insect_maxilla);
+    #maxillary palpi with 4 palpomeres;
+    this > aism-maxillary_palpus_with_4_palpomeres;
+    #labial palpi with 3 palpomeres.
+    this > aism-labial_palpus_with_3_palpomeres;
+
+    #Pronotum. 
+    #Maximum width in correspondence of posterolateral angles;
+    this > pronotum:id-abe165 > longitudinal_ #/ how to do it?; DEFINE CLASSES in ONTOLOGIES for lines. line parallel to lateral axis, find something for middle-of-pronotum, and make posterior_line > middle_line
+    #base finely bordered laterally and medially;
+        pronotum:id-abe165 > bspo-posterior_margin .ro-adjacent_to aism-cuticular_groove < pronotum:id-abe165;
+        pronotum:id-abe165 > bspo-lateral_margin .ro-adjacent_to aism-cuticular_groove < pronotum:id-abe165;
+    #posterolateral angles sinuated in lateral view;
+        pronotum:id-abe165 > bspo-postero-lateral_margin >> pato-concave;
+    #covered with simple setigerous punctures intermixed with smaller ones,
+        pronotum:id-abe165 > aism-punctate_cuticle:id-b400fd > (aism-simple_setigerous_cuticular_puncture:id-ad3b93, aism-simple_setigerous_cuticular_puncture:id-7a9187);
+        aism-simple_setigerous_cuticular_puncture:id-ad3b93 >> pato-diameter:id-43e224 |>| pato-diameter << aism-simple_setigerous_cuticular_puncture:id-7a9187;
+    #the largest ones separated by approximately 2 diameters on disc.
+        aism-punctate_cuticle:id-b400fd >> aism-interpunctural_distance .iao-is_quality_measured_as iao-measurement_datum:id-698b94 .aism-has_unit pato-diameter:id-43e224;
+																					iao-measurement_datum:id-698b94 .iao-has_measurement_value 2.0;
+    
+    #Elytra.
+    #Wider than pronotum; 
+    this > colao-elytron_with_8_striae:id-bcb1e3 >> pato-width |>| pato-width << pronotum:id-abe165;
+    #striae clearly impressed, in number of 8;
+        colao-elytron_with_8_striae:id-bcb1e3 > colao-elytral_stria:id-7cfd1a >> pato-increased_depth;
+    #strial punctures distinctly larger than strial width;
+        colao-elytron_with_8_striae:id-bcb1e3 > aism-cuticular_puncture >> pato-diameter |>| pato-width << colao-elytral_stria:id-7cfd1a;
+    #carinae? #/ check!
+        
+                #interstriae 8 and 9 carinated proximally along striae 7 and 8, respectively; #see Tarasov & Génier (2015) https://doi.org/10.1371/journal.pone.0116671 #/ check
+                #this > colao-elytral_interstria_8 > bspo-proximal_region > aism-cuticular_carina .ro-adjacent_to colao-elytral_stria_7 < this; #/ check
+                #this > colao-elytral_interstria_9 > bspo-proximal_region > aism-cuticular_carina .ro-adjacent_to colao-elytral_stria_8 < this; #/ check
+
+
+    #interstriae punctured, punctures roughly disposed in 2 rows on disc;
+        colao-elytron_with_8_striae:id-bcb1e3 > colao-elytral_interstria > aism-punctate_cuticle:id-4b594d > aism-row_of_punctures >> ; #/ how to state exact count? #/ !!!!!!!!!
+        #/ create class 2_rows_punctures with has_exactly 2 rows, UBERON
+    #cuticle smooth.
+        aism-punctate_cuticle:id-4b594d >> pato-smooth;
+    #Hind wings present and normally developed.
+    this > aism-hind_wing >> (pato-present, pato-normal);
+    #Scutellar shield concealed.    
+    this > colao-scutellar_shield >> pato-concealed;
+
+
+    #Tergite VIII.
+    #Convex;
+    this > aism-abdominal_tergite_VIII:id-984071 >> pato-convex;
+    #covered with simple, deep cuticular punctures separated by approximately 1 diameter.
+        aism-abdominal_tergite_VIII:id-984071 > aism-punctate_cuticle:id-987d83 > aism-simple_setigerous_cuticular_puncture:id-2ade5e >> pato-increased_depth;
+        aism-punctate_cuticle:id-987d83 > aism-interpunctural_distance .iao-is_quality_measured_as iao-measurement_datum:id-074fd2 .aism-has_unit pato-diameter << aism-simple_setigerous_cuticular_puncture:id-2ade5e;
+        																			iao-measurement_datum:id-074fd2 .iao-has_measurement_value 1.0;    
+    #/ RIBORDO PIGIDIALE ?? groove etc.
+    #anterior groove and carina present; #/ CHECK  
+        aism-abdominal_tergite_VIII:id-16cd8b > (aism-anterior_groove_of_tergite_VIII, aism-anterior_carina_of_tergite_VIII);
+    
+
+    #Ventral body surface.
+    #Anterior hypomeral depression present;
+    this > colao-anterior_hypomeral_depression;
+    #anterior hypomeral carina directed toward lateral pronotal edge before curving toward anterior angle;
+    this > colao-anterior_hypomeral_carina >> pato-curved;
+    #posterior longitudinal hypomeral carina absent;
+    this !> colao-posterior_longitudinal_hypomeral_carina;
+    #abdomen with 8 sternites.
+    this > aism-abdomen_with_8_sternites;
+    #metasternum hollowed/convex #/ add info
+    
+
+
+    #Legs.
+    #Protibiae with three external teeth,
+    this > aism-protibia:id-9fc63d > (aism-dorsal_protibial_cuticular_tooth_1, aism-dorsal_protibial_cuticular_tooth_2, aism-dorsal_protibial_cuticular_tooth_3);
+        aism-protibia:id-9fc63d !> aism-dorsal_protibial_cuticular_tooth_4;
+    #distal edge oblique, with a small sharp tooth close to protarsal insertion;
+    
+    this > colao-uncus >> (pato-decreased_magnitude, pato-sharp);
+    #dorsal protibial margin between lateral protibial teeth and proximally to protibial tooth 3 scalloped;
+    this > aism-dorsal_protibial_margin_between_protibial_teeth_1_and_2 >> pato-scalloped;
+    this > aism-dorsal_protibial_margin_between_protibial_teeth_2_and_3 >> pato-scalloped;
+    this > aism-dorsal_protibial_margin_proximal_to_protibial_tooth_3 >> pato-scalloped;
+    #protarsi with 4 segments, meso- and metatarsi with 5 segments;
+    #/ check number of protarsi !!!
+
+    this > (aism-mesotarsus_with_5_mesotarsomeres, aism-metatarsus_with_5_metatarsomeres);
+    #anteroventral carina of profemora entire;
+    this > aism-anteroventral_protibial_carina >> pato-continuous;
+    #mesotibia with 2 spurs, metatibia with 1 spur;
+    this > aism-mesotibial_spur #/ how to say 2 ???; anterior & posterior spurs
+    this > aism-metatibial_spur; #/ and posterior is present in  meta
+    
+    #Genitalia. 
+    #Parameres symmetrical, elongated,
+    this > aism-parameres >> pato-symmetrical;
+    this > aism-paramere:id-a6d524 >> pato-elongated;
+    #concave ventrally,
+        aism-paramere:id-a6d524 > bspo-ventral_margin >> pato-concave;
+    #apices sharp and bent ventrally in lateral view;
+        aism-paramere:id-a6d524 > bspo-posterior_region >> (pato-sharp, pato-ventral_orientation);
+    #Endophallus with 3 clearly sclerified raspulae;
+    this > aism-raspula >> #/ exact count = 3, how to say it?; ASK JIM how to count them
+    #lamella copulatrix present;
+    this > colao-lamella_copulatrix;
+    #frontolateral peripheral, superior right peripheral, axial and subaxial endophallites present;
+    this > (colao-frontolateral_peripheral_endophallite, colao-superior_right_peripheral_endophallite, colao-axial_endophallite, colao-subaxial_endophallite);
+
+    }
+}
