@@ -1,0 +1,211 @@
+
+# Description of Amietina mazumbaiensis Montanaro & Tarasov, n. sp.
+
+
+OTU = { #// OTUName:  Amietina mazumbaiensis
+
+    DATA = {
+
+        #>>>YAML described_species
+        described_species:
+            .id: amietina_mazumbaiensis
+            .rdfs-label: 'Amietina mazumbaiensis'
+            .gbif_id: 'https://zoobank.org/430CF1ED-102D-4F86-9888-FC8452E59480'
+            .dwc-Catalog_Number:
+                - 'http://id.luomus.fi/GZ.15821'
+            .is_a:
+                - uberon-male_organism
+                - uberon-adult_organism
+                - dwc-Preserved_Specimen
+        #<<<YAML
+        
+    }
+
+  TRAITS = {
+    
+    #--------
+    # Body.
+    #--------
+  
+    # Body lenticular, black, shiny, covered with pale yellowish setae.
+    this >> (pato-ovate, pato-black, pato-glistening);
+    this -> uberon-anatomical_collection .ro-has_member aism-cuticular_seta >> pato-light_yellow; 
+
+    # Length: 5.0 mm.
+    #>>>YAML absolute_measurement
+    absolute_measurement:
+        .measured_entity: this
+        .measured_quality: pato-length
+        .value: 3.7
+        .unit: unit-millimeter
+    #<<<YAML
+    
+
+    #--------
+    #Head.
+    #--------
+
+    # Subpentagonal, tapering anteriorly;
+    this > aism-insect_head:id-033849 >> pato-pentagonal;
+        aism-insect_head:id-033849 > bspo-anterior_region >> pato-attenuate;
+    
+    # anterior margin of clypeus with two teeth separated by an obtuse notch;
+        aism-insect_head:id-033849 > aism-clypeus > bspo-anterior_margin:id-c62f0f > aism-cuticular_tooth >> pato-bilaterally_paired;
+        bspo-anterior_margin:id-c62f0f > aism-obtusely_notched;
+
+    # clypeal margin feebly and broadly sinuated at clypeogenal junction;
+        aism-insect_head:id-033849 > bspo-antero-lateral_margin:id-24b5e8 .ro-adjacent_to colao-genoclypeal_sulcus;
+        bspo-antero-lateral_margin:id-24b5e8 >> pato-curved;
+
+    # entirely covered with simple, irregular punctures;
+        aism-insect_head:id-033849 > uberon-anatomical_collection .ro-has_member aism-cuticular_puncture:id-cc6398;
+    
+    # punctures separated by approximately 1 diameter posteriorly, denser and almost rugose anteriorly.
+        #>>>YAML relative_measurement
+        relative_measurement:
+          .measured_trait: 
+            .entity: uberon-anatomical_collection:id-912b78 < bspo-posterior_region < aism-insect_head:id-033849
+            .quality: aism-interpunctural_distance:id-012c4b
+          .unit:
+            .entity: aism-cuticular_puncture .ro-member_of uberon-anatomical_collection:id-912b78
+            .quality: pato-diameter
+          .value: 1
+        #<<<YAML
+        aism-insect_head:id-033849 > bspo-anterior_region:id-903e0d >> pato-rugose;
+        bspo-anterior_region:id-903e0d > uberon-anatomical_collection:id-ffac39 .ro-has_member aism-cuticular_puncture;
+        uberon-anatomical_collection:id-ffac39 >> aism-interpunctural_distance |<| aism-interpunctural_distance:id-012c4b;
+
+    # Frons bearing a slightly bilobed tubercle placed between the anterior margins of eyes.
+        aism-insect_head:id-033849 > aism-frons > aism-cuticular_tubercle:id-35d1b8 >> pato-bilobed;
+        aism-cuticular_tubercle:id-35d1b8 .ro-coincident_with caro-anatomical_line:id-694058 .ro-coincident_with bspo-anterior_margin < aism-eye_cuticle < this;
+        caro-anatomical_line:id-694058 >> pato-transverse_orientation;
+
+    # Antennae with 8 segments.
+        aism-insect_head:id-033849 > aism-antenna > aism-antennomere .phs-has_element_count 8;
+
+    
+    #--------
+    #Pronotum.
+    #--------
+
+    # Pronotum subtrapezoidal (maximum width in correspondence of posterolateral angles);
+    this > aism-pronotum:id-4e6a38 >> pato-trapezoid;
+    
+    #base finely bordered;
+        aism-pronotum:id-4e6a38 > bspo-posterior_margin .ro-adjacent_to aism-cuticular_groove < aism-pronotum:id-4e6a38;
+
+    # posterolateral angles sinuated in lateral view;
+        aism-pronotum:id-4e6a38 > bspo-postero-lateral_margin >> pato-curved;
+
+    # covered with sparse simple setigerous punctures intermixed with smaller ones, 
+        aism-pronotum:id-4e6a38 > uberon-anatomical_collection:id-32d798 .ro-has_member aism-simple_setigerous_cuticular_puncture:id-5779b8;
+        aism-pronotum:id-4e6a38 > uberon-anatomical_collection:id-d08d08 .ro-has_member aism-simple_setigerous_cuticular_puncture:id-a14c98;
+        aism-simple_setigerous_cuticular_puncture:id-5779b8 >> pato-diameter:id-64eb88 |>| pato-diameter << aism-simple_setigerous_cuticular_puncture:id-a14c98;
+
+    # the largest ones separated by approximately 2 diameters on disc.
+
+        #>>>YAML relative_measurement
+        relative_measurement:
+          .measured_trait:
+            .entity: uberon-anatomical_collection:id-32d798
+            .quality: aism-interpunctural_distance
+          .unit:
+            .entity: aism-simple_setigerous_cuticular_puncture:id-5779b8
+            .quality: pato-diameter:id-64eb88
+          .value: 2
+        #<<<YAML
+
+
+    #--------
+    #Elytra.
+    #--------
+
+    # Wider than pronotum;
+    this > colao-elytron:id-d1df04 >> pato-width |>| pato-width:id-db5ade << aism-pronotum:id-4e6a38; #/ it means 1 elytron is wider than relative measurement
+    
+    # striae clearly impressed, in number of 8;
+        colao-elytron:id-d1df04 > uberon-anatomical_collection .ro-has_member colao-elytral_stria:id-f09fcd >> pato-increased_depth;
+        colao-elytral_stria:id-f09fcd .phs-has_element_count 8;
+
+    # strial punctures distinctly larger than strial width;
+        colao-elytral_stria:id-f09fcd > aism-simple_setigerous_cuticular_puncture >> pato-diameter |>| pato-width << colao-elytral_stria:id-f09fcd; 
+    
+    # interstriae punctuated, punctures disposed approximately in 2 rows on disc;
+        colao-elytron:id-d1df04 > colao-elytral_disc > uberon-anatomical_collection .ro-has_member colao-elytral_interstria > uberon-anatomical_row:id-b1bc78 .ro-has_member aism-simple_setigerous_cuticular_puncture;
+        uberon-anatomical_row:id-b1bc78 .phs-has_element_count 2;
+    
+    # scutellum absent.
+    this !> aism-scutellum;
+
+    
+    #--------
+    #Tergite VIII.
+    #--------
+
+    # Cuticular punctures simple, deep, separated by approximately 1 diameter;
+    this > aism-abdominal_tergite_VIII:id-075e68 > uberon-anatomical_collection:id-809528 .ro-has_member aism-simple_setigerous_cuticular_puncture:id-576bc8 >> pato-increased_depth;
+       
+        #>>>YAML relative_measurement
+        relative_measurement:
+          .measured_trait:
+            .entity: uberon-anatomical_collection:id-809528
+            .quality: aism-interpunctural_distance
+          .unit:
+            .entity: aism-simple_setigerous_cuticular_puncture:id-576bc8
+            .quality: pato-diameter
+          .value: 1
+        #<<<YAML
+
+    # surface between punctures glossy, wrinkled. 
+        aism-abdominal_tergite_VIII:id-075e68 >> (pato-glistening, pato-wrinkled);
+    
+
+    #--------
+    #Ventral body surface.
+    #--------
+    
+    # Anterior region of hypomera concave;
+    this > colao-hypomeron:id-ec9838 > bspo-anterior_region:id-eba2c8 >> pato-concave;
+    
+    # anterior hypomeral carina directed toward lateral pronotal edge before curving toward anterior angle;
+        bspo-anterior_region:id-eba2c8 > aism-cuticular_carina >> (pato-curved, pato-lateral_orientation);
+
+    # posterior longitudinal hypomeral carina absent.
+        colao-hypomeron:id-ec9838 > bspo-posterior_region !> aism-cuticular_carina;
+
+
+    #--------
+    #Ventral body surface.
+    #--------
+
+    # Protibiae with three external teeth;
+    this > aism-protibia:id-1bcc18 > aism-cuticular_tooth .phs-has_element_count 3;
+
+    # distal margin oblique, with an uncus.
+        aism-protibia:id-1bcc18 > bspo-distal_margin:id-0e33d8 >> pato-oblique_orientation;
+        bspo-distal_margin:id-0e33d8 > colao-uncus;
+        
+    # Anteroventral carina of profemora entire.
+    this > aism-profemur > bspo-antero-ventral_region > aism-cuticular_carina >> pato-continuous;
+
+    
+    #--------
+    #Genitalia.
+    #--------
+        
+    # Parameres symmetrical, elongated, apices sharp and bent ventrally in lateral view;
+    this > aism-parameres:id-bf6f3c >> (pato-elongated, pato-symmetrical);
+        aism-parameres:id-bf6f3c > bspo-postero-ventral_region:id-31b50d >> (pato-sharp, pato-ventral_orientation);
+    
+    # apices slightly sinuated laterally in frontal view.
+    bspo-postero-ventral_region:id-31b50d >> aism-obtusely_notched;
+
+    # Endophallus with 2 clearly sclerified raspulae; 
+    this > aism-endophallus:id-4caf81 > colao-raspula .phs-has_element_count 2;
+    
+    # lamella copulatrix present, composed of 3 branches.
+        aism-endophallus:id-4caf81 > colao-lamella_copulatrix > aism-endophallite .phs-has_element_count 3;
+    
+    }
+
+}
