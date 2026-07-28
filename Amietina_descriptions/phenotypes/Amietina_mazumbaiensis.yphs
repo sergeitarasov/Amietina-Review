@@ -10,7 +10,7 @@ OTU = { #// OTUName:  Amietina mazumbaiensis
         described_species:
             .id: amietina_mazumbaiensis
             .rdfs-label: 'Amietina mazumbaiensis'
-            .gbif_id: 'urn:lsid:zoobank.org:act:E49B06F0-29F5-48C5-8D70-C01B24C257B7' #/ valid one
+            .gbif_id: 'urn:lsid:zoobank.org:act:E49B06F0-29F5-48C5-8D70-C01B24C257B7' #/ valid one 
             .dwc-Catalog_Number:
                 - 'http://id.luomus.fi/GAC.37187'  #/ valid one
             .is_a:
