@@ -130,12 +130,15 @@ OTU = { #// OTUName:  Amietina grebennikovi
     # strial punctures distinctly larger than strial width;
         colao-elytral_stria:id-f09fcd > aism-simple_setigerous_cuticular_puncture >> pato-diameter |>| pato-width << colao-elytral_stria:id-f09fcd; 
     
-    # interstriae punctuated, punctures disposed approximately in 2 rows on disc;
+    # interstriae with simple setigerous punctures disposed approximately on 2 rows on disc;
         colao-elytron:id-d1df04 > colao-elytral_disc > uberon-anatomical_collection .ro-has_member colao-elytral_interstria > uberon-anatomical_row:id-b1bc78 .ro-has_member aism-simple_setigerous_cuticular_puncture;
         uberon-anatomical_row:id-b1bc78 .phs-has_element_count 2;
     
     # scutellum absent.
     this !> aism-scutellum;
+    
+    # Metathoracic wings fully developed.
+    this > aism-hind_wing;
 
     
     #--------
@@ -156,8 +159,8 @@ OTU = { #// OTUName:  Amietina grebennikovi
           .value: 1
         #<<<YAML
 
-    # surface between punctures glossy, wrinkled. 
-        aism-abdominal_tergite_VIII:id-075e68 >> (pato-glistening, pato-wrinkled);
+    # surface between punctures glossy. 
+        aism-abdominal_tergite_VIII:id-075e68 >> pato-glistening;
     
 
     #--------
@@ -175,7 +178,7 @@ OTU = { #// OTUName:  Amietina grebennikovi
 
 
     #--------
-    #Ventral body surface.
+    #Legs.
     #--------
 
     # Protibiae with three external teeth;
@@ -193,15 +196,27 @@ OTU = { #// OTUName:  Amietina grebennikovi
     #Genitalia.
     #--------
         
-    # Parameres symmetrical, elongated, apices sharp and bent ventrally in lateral view;
+    # Parameres symmetrical, elongated, as long as 0.94 times phallobase length;
     this > aism-parameres:id-bf6f3c >> (pato-elongated, pato-symmetrical);
-        aism-parameres:id-bf6f3c > bspo-postero-ventral_region:id-31b50d >> (pato-sharp, pato-ventral_orientation);
+        #>>>YAML relative_measurement
+        relative_measurement:
+          .measured_trait:
+            .entity: aism-parameres:id-bf6f3c
+            .quality: pato-length
+          .unit:
+            .entity: aism-phallobase < this
+            .quality: pato-length
+          .value: 0.94
+        #<<<YAML
+    
+    #apices sharp and bent ventrally in lateral view;
+        aism-parameres:id-bf6f3c > bspo-postero-ventral_region >> (pato-sharp, pato-ventral_orientation);
 
     # ventral margin of paramere feebly curved in lateral view;
         aism-parameres:id-bf6f3c > bspo-ventral_margin >> pato-concave .ro-has_modifier pato-decreased_magnitude;
     
     # apices not sinuated laterally in frontal view.
-    bspo-postero-lateral_region:id-31b50d >> pato-straight;
+    bspo-postero-lateral_region >> pato-straight;
 
     # Endophallus with 3 clearly sclerified raspulae; 
     this > aism-endophallus:id-4caf81 > colao-raspula .phs-has_element_count 3;
