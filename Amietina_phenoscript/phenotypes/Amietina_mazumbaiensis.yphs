@@ -135,8 +135,8 @@ OTU = { #// OTUName:  Amietina mazumbaiensis
         colao-elytron:id-d1df04 > colao-elytral_disc > uberon-anatomical_collection .ro-has_member colao-elytral_interstria > uberon-anatomical_row:id-b1bc78 .ro-has_member aism-simple_setigerous_cuticular_puncture;
         uberon-anatomical_row:id-b1bc78 .phs-has_element_count 2;
     
-    # scutellum absent.
-    this !> aism-scutellum;
+    # metathoracic scutellum absent.
+    this > aism-metathorax !> aism-scutellum;
     
     # Metathoracic wings fully developed.
     this > aism-hind_wing;
@@ -179,7 +179,7 @@ OTU = { #// OTUName:  Amietina mazumbaiensis
 
 
     #--------
-    #Ventral body surface.
+    #Legs.
     #--------
 
     # Protibiae with three external teeth;

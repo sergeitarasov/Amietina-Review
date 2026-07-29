@@ -132,8 +132,8 @@ OTU = { #// OTUName:  Amietina bondarevi
     # interstriae with scattered simple setigerous punctures;
         colao-elytron:id-d1df04 > colao-elytral_disc > uberon-anatomical_collection .ro-has_member colao-elytral_interstria > uberon-anatomical_row:id-b1bc78 .ro-has_member aism-simple_setigerous_cuticular_puncture;
     
-    # scutellum absent.
-    this !> aism-scutellum;
+    # metathoracic scutellum absent.
+    this > aism-metathorax !> aism-scutellum;
 
     # Metathoracic wings fully developed.
     this > aism-hind_wing;
@@ -176,7 +176,7 @@ OTU = { #// OTUName:  Amietina bondarevi
 
 
     #--------
-    #Ventral body surface.
+    #Legs.
     #--------
 
     # Protibiae with three external teeth;
