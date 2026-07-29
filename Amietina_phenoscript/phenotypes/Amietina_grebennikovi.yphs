@@ -5,14 +5,15 @@
 OTU = { #// OTUName:  Amietina grebennikovi
 
     DATA = {
-
-        #>>>YAML described_species
-        described_species:
+        
+        #>>>YAML new_species
+        new_species:
             .id: amietina_grebennikovi
             .rdfs-label: 'Amietina grebennikovi'
-            .gbif_id: 'urn:lsid:zoobank.org:act:352E8138-107D-477F-A6FA-B8215B26BC52' #/ valid one
+            .zoobank_id: 'http://zoobank.org/urn:lsid:zoobank.org:act:352E8138-107D-477F-A6FA-B8215B26BC52'
+            .dwc-Parent_Name_Usage_ID: 'https://www.gbif.org/taxon/62996'
             .dwc-Catalog_Number:
-                - 'http://id.luomus.fi/GAC.37187'  #/ get one and change!
+                - 'http://id.luomus.fi/GAC.37187'  #/ change to valid one
             .is_a:
                 - uberon-male_organism
                 - uberon-adult_organism

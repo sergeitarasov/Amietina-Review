@@ -6,13 +6,14 @@ OTU = { #// OTUName:  Amietina mazumbaiensis
 
     DATA = {
 
-        #>>>YAML described_species
-        described_species:
+        #>>>YAML new_species
+        new_species:
             .id: amietina_mazumbaiensis
             .rdfs-label: 'Amietina mazumbaiensis'
-            .gbif_id: 'urn:lsid:zoobank.org:act:E49B06F0-29F5-48C5-8D70-C01B24C257B7' #/ valid one 
+            .zoobank_id: 'http://zoobank.org/urn:lsid:zoobank.org:act:E49B06F0-29F5-48C5-8D70-C01B24C257B7'
+            .dwc-Parent_Name_Usage_ID: 'https://www.gbif.org/taxon/62996'
             .dwc-Catalog_Number:
-                - 'http://id.luomus.fi/GAC.37187'  #/ valid one
+                - 'http://id.luomus.fi/GAC.37187'  #/ change to valid one
             .is_a:
                 - uberon-male_organism
                 - uberon-adult_organism
