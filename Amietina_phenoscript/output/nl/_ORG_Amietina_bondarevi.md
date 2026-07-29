@@ -2,7 +2,7 @@
 - [species](http://purl.obolibrary.org/obo/TAXRANK_0000006) [Taxon ID](http://rs.tdwg.org/dwc/terms/taxonID) [http://zoobank.org/urn:lsid:zoobank.org:act:D72572AB-394E-4DCC-8BD8-ABA15B1D262F](http://zoobank.org/urn:lsid:zoobank.org:act:D72572AB-394E-4DCC-8BD8-ABA15B1D262F)
 - [species](http://purl.obolibrary.org/obo/TAXRANK_0000006) [Parent Name Usage ID](http://rs.tdwg.org/dwc/terms/parentNameUsageID) [https://www.gbif.org/taxon/62996](https://www.gbif.org/taxon/62996)
 - [male organism](http://purl.obolibrary.org/obo/UBERON_0003101) [Catalog Number](http://rs.tdwg.org/dwc/terms/catalogNumber) [http://id.luomus.fi/GAC.37187](http://id.luomus.fi/GAC.37187)
----
+-----------------------
 - [male organism](http://purl.obolibrary.org/obo/UBERON_0003101), [length](http://purl.obolibrary.org/obo/PATO_0000122) = 3.0, unit: [millimeter](http://purl.obolibrary.org/obo/UO_0000016);
 - [male organism](http://purl.obolibrary.org/obo/UBERON_0003101), [insect region of cuticle](http://purl.obolibrary.org/obo/AISM_0000174) [encircles](http://purl.obolibrary.org/obo/AISM_0000078) [anatomical collection](http://purl.obolibrary.org/obo/UBERON_0034925) [has member](http://purl.obolibrary.org/obo/RO_0002351) [cuticular seta](http://purl.obolibrary.org/obo/AISM_0000039): [light yellow](http://purl.obolibrary.org/obo/PATO_0001264);
 - [male organism](http://purl.obolibrary.org/obo/UBERON_0003101), [insect head](http://purl.obolibrary.org/obo/AISM_0000107)
