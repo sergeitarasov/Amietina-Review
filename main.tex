@@ -84,6 +84,12 @@ Together, this study demonstrates how integrated digital workflows can enhance t
 
 \section*{ST-Introduction}
 
+% - stylyzing manuscript
+% - version control
+% - collaboration
+% - copy pasting descriptions
+% - NL for descriptipsn
+
 Taxonomic studies depend on the accurate production, management, and publication of large quantities of descriptive information. Most taxonomic manuscripts are prepared using general-purpose word processors, particularly Microsoft Word (including its cloud-based version) or Google Docs.  These applications provide familiar writing environments and support comments, suggested edits, and simultaneous collaboration.
 Nevertheless, they  have limitations for taxonomic projects which are often data-intensive (Ref to Arpha paper). Changes may be scattered across multiple document versions, making revisions difficult to track and earlier text hard to recover, particularly in collaborative projects. Substantial effort may also be required to format a word-processing document according to the requirements of a particular journal, which takes unncesseary time that taxonomist could deveote to scientific finding, instead for stylziing.
 
@@ -91,7 +97,7 @@ Another critical issues is that conventional taxonomic descriptions are written 
 
 In a basic Phenoscript-assisted workflow, the generated natural-language description can be copied into a manuscript. This copy-paste retains an important source of duplication. Whenever the original Phenoscript description is corrected or expanded, the natural-language text must be generated again and recopied into the manuscript. Repeated copying along with the outlined issues of manuscript preparation --version control and stylizing -- may create errors, require extra time and and increases the risk of divergence between the underlying observations and the final publication. 
 
-Here, we present an integrated workflow for streamlining semantic taxonomic manuscripts that reduces repetitive copying, provides transparent version control, and minimizes time spent on formatting. Phenoscript descriptions are written in \href{https://code.visualstudio.com/}{Visual Studio Code}, a freely available text editor supporting Phenoscript language. The complete taxonomic project is stored in \href{https://github.com/}{GitHub}, an online platform that records every change made to the files, allows collaborators to compare revisions and recover earlier versions, and can provide public access to all materials associated with the study. The manuscript is prepared in \href{https://www.overleaf.com/}{Overleaf}, a collaborative online platform for writing \LaTeX{} documents that supports simultaneous editing, automatic compilation, reference management, and journal-specific templates \citep{sanchez_egea_garcia_vilana_gonzalez_rojas_napoles_alberro_2026}. GitHub connects the Phenoscript files with Overleaf, allowing updated human-readable descriptions to be synchronized with the manuscript without repeated copying and pasting.  Together, these tools provide taxonomists with a reproducible workflow in which descriptions are written once, their revision history is preserved, and publication-ready text is generated and incorporated directly into the manuscript. By storing openly accessible files in GitHub and encoding phenotypic information with standardized ontology terms, the workflow makes taxonomic data more findable, accessible, interoperable, and reusable (FAIR).
+Here, we present an integrated workflow for streamlining semantic taxonomic manuscripts that reduces repetitive copying, provides transparent version control, and minimizes time spent on formatting. Phenoscript descriptions are written in \href{https://code.visualstudio.com/}{Visual Studio Code}, a freely available text editor supporting Phenoscript language. The complete taxonomic project is stored in \href{https://github.com/}{GitHub}, an online platform that records every change made to the files, allows collaborators to compare revisions and recover earlier versions, and can provide public access to all materials associated with the study. The manuscript is prepared in \href{https://www.overleaf.com/}{Overleaf}, a collaborative online platform for writing \LaTeX{} documents that supports simultaneous editing, automatic compilation, reference management, and journal-specific templates \citep{sanchez_egea_garcia_vilana_gonzalez_rojas_napoles_alberro_2026}. GitHub connects the Phenoscript files with Overleaf, allowing updated human-readable descriptions to be synchronized with the manuscript without repeated copying and pasting.  Together, these tools reduces repetitive work and provide taxonomists with a reproducible workflow in which descriptions are written once, their revision history is preserved, and publication-ready text is generated and incorporated directly into the manuscript. By storing openly accessible files in GitHub and encoding phenotypic information with standardized ontology terms, the workflow makes taxonomic data more findable, accessible, interoperable, and reusable (FAIR).
 
 
 
@@ -99,51 +105,11 @@ Here, we present an integrated workflow for streamlining semantic taxonomic manu
 
 
 
-
-The novelty of this workflow lies not simply in the individual use of Phenoscript, GitHub, or Overleaf, but in connecting them into a continuous path from morphological observation to publication. The semantic description becomes the authoritative source for both the human-readable taxonomic treatment and the computable phenotype data. Version control records how this source changes, while manuscript integration ensures that the published text remains aligned with it. The resulting ``write once, generate multiple outputs'' approach reduces repetitive work, improves consistency and transparency, and makes taxonomic descriptions reusable beyond the publication in which they originally appear.
 
 We demonstrate this workflow through a taxonomic review of the Afrotropical dung beetle genus \textit{Amietina} Cambefort, 1981. Species descriptions were written in Phenoscript, managed and version-controlled through GitHub, and incorporated into an Overleaf manuscript as automatically generated human-readable treatments. In addition to revising the taxonomy of \textit{Amietina}, this study provides a practical example of how semantic technologies and established collaborative platforms can be integrated into the routine preparation of taxonomic publications.
 
 
 
-%-------------
-Taxonomic studies depend on the accurate production, management, and publication of large amounts of descriptive information.
-
-Most manuscript are originally written in Micorosft Word or Google Docs.
-Scientists also spend considerable time stylyzing manuscript according to the jornal requirements. Version control is problematic in these software but is often badly needed as manuscript wiriting progresses, especially in collaboarive projects, to keep track on  changes and to be abale to recover previous ones. 
-Althoug collaboration is well supported [provide pros and cons of using Word and Google docs for collaboratin], it is not ideal.
-
-
-Moreover, conventional taxonomic descriptions are written primarily as natural text that are not computer redable precluding automatic integration, extraction, and comparison of species phenotypic data. This latter problem can be bypassed with Phenoscript, a semantic language that liverages biological ontologues that encodes phenotypic information in both human- and machine-readable formats. A decsiption written in Phenoscritp can be readily converted to a human redable natural text for the and copy-pasted in the manuscript. However, this requires an extra copy-paste action, which is annoying epscially if one wants to update a description -- a new copy-paste is required. 
-
-All afereomnetioned issues create separation between data collection and manuscript preparation creates duplicated work and increases the risk of inconsistencies, transcription errors, and divergence between the underlying observations and the final published text. 
-
-Herein we present an integrative taxonomic workflow that streamlines those processe -- it  combines semantic species descriptions written in Phenoscript, version-controlled data management through GitHub, and collaborative manuscript preparation in Overleaf. With  Phenoscrip descriptions become both human and machine redable and reuse the standardized morphological tersm from bioontologies.
-
-
-Overleaf [make url link to overleaf] is a LaTex-based collaborative writing platform that supports real-time editing, manuscript version tracking, and the integration of structured data into scientific manuscripts \citep{sanchez_egea_garcia_vilana_gonzalez_rojas_napoles_alberro_2026}. It eliminates the neeed of styluying the manuscript so sceintist will  not waste their time [provede cons why it's better than Word and Google], and streamlines manuscript submission, saving sceintists time.
-
-Phensocritp and Overleaf are linked through GitHub -- the ontegration supported by Overleaf platform. This provides version control amd collaborative editing of Phensocipt written descriptions, and public access to all files associated with the publication.
-
-In short, a scientist write a description in Phenoscript in the open editor VS Code [make ural link], then with the few clicks of button this descrption automatically appears on Overleaf withput copy-paste thrpught the synzhronization powered by Github.
-
-
-
-
-%---
-Phenoscript is a semantic language that encodes phenotypic information in both human- and machine-readable formats, enabling morphological descriptions to be interpreted by taxonomists while being computationally reusable
-
-
-- stylyzing manuscript
-- version control
-- collaboration
-
-- copy pasting descriptions
-
-
-Another problem is NL tha can be bypassed with Phenoscript. However, this maens that NL generated with Phenoscript should be  manually copy-paseted int he manuscript.
-
-Herein we present the workflow that stremlines it.
 
 \section*{Introduction}
 %---
