@@ -29,8 +29,8 @@ OTU = { #// OTUName:  Amietina grebennikovi
     #--------
   
     # Body lenticular, black, shiny, covered with pale yellowish setae.
-    this >> (pato-ovate, pato-black, pato-glistening);
-    this -> uberon-anatomical_collection .ro-has_member aism-cuticular_seta >> pato-light_yellow; 
+    this > aism-insect_region_of_cuticle:id-d6c2b6 >> (pato-ovate, pato-black, pato-glistening);
+    this > aism-insect_region_of_cuticle:id-d6c2b6 -> uberon-anatomical_collection .ro-has_member aism-cuticular_seta >> pato-light_yellow; 
 
     # Length: 3.2 mm.
     #>>>YAML absolute_measurement

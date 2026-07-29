@@ -29,8 +29,8 @@ OTU = { #// OTUName:  Amietina praedicta
     #--------
   
     # Body lenticular, black, shiny, covered with pale yellowish setae.
-    this >> (pato-ovate, pato-black, pato-glistening);
-    this > aism-insect_region_of_cuticle -> uberon-anatomical_collection .ro-has_member aism-cuticular_seta >> pato-light_yellow; 
+    this > aism-insect_region_of_cuticle:id-fcb42f >> (pato-ovate, pato-black, pato-glistening);
+    this > aism-insect_region_of_cuticle:id-fcb42f -> uberon-anatomical_collection .ro-has_member aism-cuticular_seta >> pato-light_yellow; 
 
     # Length: 3.7 mm.
     #>>>YAML absolute_measurement

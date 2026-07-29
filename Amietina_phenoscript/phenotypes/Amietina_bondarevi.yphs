@@ -29,8 +29,8 @@ OTU = { #// OTUName:  Amietina bondarevi
     #--------
   
     # Body lenticular, integument light pinkish cupreous, shiny, covered with pale yellowish setae.
-    this >> (pato-ovate, pato-pink, pato-glistening);
-    this > aism-insect_region_of_cuticle -> uberon-anatomical_collection .ro-has_member aism-cuticular_seta >> pato-light_yellow; 
+    this > aism-insect_region_of_cuticle:id-6b0678 >> (pato-ovate, pato-pink, pato-glistening);
+    this > aism-insect_region_of_cuticle:id-6b0678 -> uberon-anatomical_collection .ro-has_member aism-cuticular_seta >> pato-light_yellow; 
 
     # Length: 3.0 mm.
     #>>>YAML absolute_measurement
