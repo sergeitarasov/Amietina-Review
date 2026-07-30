@@ -13,7 +13,7 @@ OTU = { #// OTUName:  Amietina praedicta
             .zoobank_id: 'http://zoobank.org/urn:lsid:zoobank.org:act:27768583-2426-4AF1-B02C-BD37CC2B9917'
             .dwc-Parent_Name_Usage_ID: 'https://www.gbif.org/taxon/62996'
             .dwc-Catalog_Number:
-                - 'http://id.luomus.fi/GAC.37187'  #/ change to valid one
+                - 'http://id.luomus.fi/KR.41537'
             .is_a:
                 - uberon-male_organism
                 - uberon-adult_organism
