@@ -124,21 +124,21 @@ Here, we use this workflow in a taxonomic review of the Afrotropical dung beetle
 
 
 
-\subsection*{The Workflow: Integrating Phenoscript, GitHub, and Overleaf}
+\subsection*{Workflow integrating Phenoscript, GitHub, and Overleaf}
 
-The proposed workflow consists of four main steps. This workflow was followed throughout the present study, and all associated files are available in the project’s GitHub repository.
+We organized the project as a four-step workflow linking semantic description, version control, collaborative writing, and manuscript rendering (Fig. \ref{fig:workflow}). The GitHub repository contains the Phenoscript source files, generated outputs, manuscript source, bibliography, and figures, thereby keeping the material required to reproduce the taxonomic treatments in one version-controlled project.
 
-\textbf{Step 1: Writing semantic descriptions.}
-A taxonomist writes or edits a semantic species description in Phenoscript using the dedicated Phenoscript extension \citep{ADD_PHENOSCRIPT_REFERENCE}, which is freely available for the \href{https://code.visualstudio.com/}{Visual Studio Code} text editor. The extension converts the description into a machine-readable knowledge graph, for example in OWL format, and a human-readable Markdown representation.
+\textbf{Step 1: Writing and processing semantic descriptions.}
+We wrote the descriptions of the four new species as \texttt{.yphs} files in \href{https://code.visualstudio.com/}{Visual Studio Code}, using the dedicated \href{https://marketplace.visualstudio.com/items?itemName=Tarasov-Lab.phenoscript}{Phenoscript extension}. The Phenoscript workflow parsed each description into an ontology-based knowledge graph, checked it against the project validation rules, and generated machine-readable OWL and human-readable Markdown and HTML outputs \citep{montanaro2024beyond, montanaro2024computable}. Thus, the semantic source and the text used in the taxonomic treatment were produced from the same description.
 
-\textbf{Step 2: Preparing the manuscript in Overleaf.}
-The manuscript is prepared in Overleaf, a cloud-based collaborative platform built around the \LaTeX{} document-preparation system. \LaTeX{} is widely used in scientific publishing and enables structured manuscript preparation and automated formatting of references, figures, tables, cross-references, and other document elements. Overleaf supports collaborative writing, revision tracking, automatic compilation, and rendering of the manuscript as a formatted PDF. The resulting \LaTeX{} source files and PDF can be used for journal submission and preprint publication.
+\textbf{Step 2: Preparing the manuscript.}
+We wrote the manuscript in \LaTeX{} using \href{https://www.overleaf.com/}{Overleaf}. Overleaf provided a shared editing environment and compiled the manuscript, bibliography, figures, cross-references, and imported descriptions into a formatted PDF. Because formatting was controlled by the \LaTeX{} document class and commands, changes to the journal style did not require manual reformatting of each taxonomic treatment.
 
-\textbf{Step 3: Connecting Phenoscript and Overleaf through GitHub.}
-Both the Phenoscript project and the Overleaf manuscript are linked to a previously created GitHub repository. Synchronization of the local Phenoscript project with GitHub can be facilitated through GitHub Desktop, whereas Overleaf provides built-in GitHub integration. With a few user-initiated clicks, the Phenoscript source files and generated outputs are committed to GitHub and synchronized with the corresponding Overleaf project. GitHub also provides version control for the complete study, preserving the history of changes to descriptions, manuscript files, scripts, and other associated materials.
+\textbf{Step 3: Versioning and synchronizing the project.}
+We used GitHub as the link between the local Phenoscript project and the Overleaf project. Changes made locally were committed and pushed to the GitHub repository, which preserved the revision history of both the semantic descriptions and their generated outputs. The repository was then synchronized with Overleaf through its GitHub integration. This arrangement allowed collaborators to compare revisions, recover earlier versions, and update the manuscript and its source data within the same project \citep{ram2013git, braga2023github}.
 
-\textbf{Step 4: Incorporating generated descriptions into the manuscript.}
-After synchronization, the generated Markdown description is rendered directly within the \LaTeX{} manuscript, so that the taxonomic treatment displayed in Overleaf is derived from the semantic source. This can be achieved using the \verb|\markdownInput{}| command provided by the \texttt{markdown} package, loaded with \verb|\usepackage{markdown}|. Consequently, changes made to a Phenoscript description can be propagated to the manuscript through a small number of synchronization steps, without manually copying or duplicating the descriptive text.
+\textbf{Step 4: Rendering descriptions in the manuscript.}
+We inserted each generated Markdown description directly into the corresponding taxonomic treatment with the \verb|\markdownInput{}| command from the \texttt{markdown} package. After a Phenoscript source file was revised, we regenerated its outputs, committed them to GitHub, and synchronized the repository with Overleaf. The next manuscript compilation then rendered the revised description without manual copying or Markdown-to-\LaTeX{} conversion. The Phenoscript file therefore remained the authoritative source for both the computable phenotype data and the description read in the manuscript.
 
 
 
@@ -166,9 +166,13 @@ After synchronization, the generated Markdown description is rendered directly w
 % Moreover, the nomenclatural acts establishing the new species names were published, in addition to the regular Zoobank registration, in the form of nanopublications. Nanopubs were realised in \href{https://nanodash.petapico.org/publish?}{nanodash} using the \href{https://nanodash.petapico.org/publish?11&template=https://w3id.org/np/RAa7sIgQ77jJL4HYYGVH8sNu1YEKCH3F-CHqHrgbWWGS4}{format for defining new taxa} already tested by \cite{montanaro2024beyond}. Collecting data of all examined specimens were formatted in DarwinCore and are available in the supplementary material.
 
 
-\subsection*{Sematic descriptions using Phenoscript}
+\subsection*{Semantic descriptions using Phenoscript}
 
-We follow the general workflow developed in previous papers \citep{montanaro2024beyond, montanaro2024computable}, with only slight modifications in syntax and terminology (XX). A complete annotation guide to write descriptions in the most consistent way can be found on \href{https://github.com/sergeitarasov/phenoscript-workshop-incol-2026/wiki/Annotation-Guide}{GitHub}. The anatomical terms come from insect anatomy ontology and colao.
+We prepared separate Phenoscript descriptions for \textit{Amietina bondarevi}, \textit{A. grebennikovi}, \textit{A. mazumbaiensis}, and \textit{A. praedicta}, following the approach of \citet{montanaro2024beyond} and \citet{montanaro2024computable}. To keep descriptions consistent among species, we used the same order of anatomical regions and followed the project \href{https://github.com/sergeitarasov/phenoscript-workshop-incol-2026/wiki/Annotation-Guide}{annotation guide}. Comments in the \texttt{.yphs} files record the corresponding conventional wording and make the semantic statements easier to review.
+
+Each statement links an anatomical entity to a quality, measurement, count, or relationship. Anatomical terms were drawn primarily from the Anatomy Ontology of Insect Skeleto-Muscular system (AISM) and the Coleoptera Anatomy Ontology (COLAO; \citealp{giron2024colao}). Phenotypic qualities were represented with terms from the Phenotype and Trait Ontology (PATO), spatial regions with the Biological Spatial Ontology (BSPO), relations with the Relations Ontology (RO), and measurement units with the Units of Measurement Ontology (UO). The project configuration file records the ontology sources and namespace prefixes used during processing. Because every term resolves to an ontology identifier, equivalent concepts can be recognized computationally even when their displayed labels differ.
+
+We processed each source description to produce an OWL representation of the phenotype and checked the output against the validation rules implemented in the Phenoscript workflow. We corrected the source whenever validation identified a structural or logical problem and regenerated the outputs. The final Markdown files present the same statements in a readable form and retain hyperlinks from anatomical and phenotypic terms to their ontology records. These Markdown files, rather than separately written descriptions, are the files rendered in the four new-species treatments below.
 
 
 \subsection*{Material examined and morphology}
