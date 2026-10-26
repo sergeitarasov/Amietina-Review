@@ -93,7 +93,7 @@ OTU = { #// OTUName:  Amietina bondarevi
     #base finely bordered;
         aism-pronotum:id-4e6a38 > bspo-posterior_margin .ro-adjacent_to aism-cuticular_groove < aism-pronotum:id-4e6a38;
 
-    # posterolateral angles sinuated in lateral view; #/ check!!
+    # posterolateral angles slightly sinuated in lateral view;
         aism-pronotum:id-4e6a38 > bspo-postero-lateral_margin >> pato-curved;
 
     # covered with sparse simple setigerous punctures intermixed with smaller ones, 
@@ -143,7 +143,7 @@ OTU = { #// OTUName:  Amietina bondarevi
     #Tergite VIII.
     #--------
 
-    # Cuticular punctures simple, deep, separated by approximately 1 diameter; #/ check!!!
+    # Cuticular punctures simple, deep, separated by approximately 1 diameter;
     this > aism-abdominal_tergite_VIII:id-075e68 > uberon-anatomical_collection:id-809528 .ro-has_member aism-simple_setigerous_cuticular_puncture:id-576bc8 >> pato-increased_depth;
        
         #>>>YAML relative_measurement
@@ -157,7 +157,7 @@ OTU = { #// OTUName:  Amietina bondarevi
           .value: 1
         #<<<YAML
 
-    # surface between punctures glossy. #/ check!!!
+    # surface between punctures glossy.
         aism-abdominal_tergite_VIII:id-075e68 >> pato-glistening;
     
 
@@ -165,13 +165,13 @@ OTU = { #// OTUName:  Amietina bondarevi
     #Ventral body surface.
     #--------
     
-    # Anterior region of hypomera concave; #/ check!!!
+    # Anterior region of hypomera concave;
     this > colao-hypomeron:id-ec9838 > bspo-anterior_region:id-eba2c8 >> pato-concave;
     
-    # anterior hypomeral carina directed toward lateral pronotal edge before curving toward anterior angle; #/ check!!!
+    # anterior hypomeral carina directed toward lateral pronotal edge before curving toward anterior angle;
         bspo-anterior_region:id-eba2c8 > aism-cuticular_carina >> (pato-curved, pato-lateral_orientation);
 
-    # posterior longitudinal hypomeral carina absent. #/ check!!!
+    # posterior longitudinal hypomeral carina absent.
         colao-hypomeron:id-ec9838 > bspo-posterior_region !> aism-cuticular_carina;
 
 
@@ -186,7 +186,7 @@ OTU = { #// OTUName:  Amietina bondarevi
         aism-protibia:id-1bcc18 > bspo-distal_margin:id-0e33d8 >> pato-oblique_orientation;
         bspo-distal_margin:id-0e33d8 > colao-uncus;
         
-    # Anteroventral carina of profemora entire. #/ check!!!
+    # Anteroventral carina of profemora entire.
     this > aism-profemur > bspo-antero-ventral_region > aism-cuticular_carina >> pato-continuous;
 
     

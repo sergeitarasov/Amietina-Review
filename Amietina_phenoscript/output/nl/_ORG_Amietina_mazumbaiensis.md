@@ -1,6 +1,7 @@
+<!-- _ORG_Amietina mazumbaiensis -->
 - [male organism](http://purl.obolibrary.org/obo/UBERON_0003101) [has role in modeling](http://purl.obolibrary.org/obo/RO_0003301) [TU](http://purl.obolibrary.org/obo/CDAO_0000138) [denotes](http://purl.obolibrary.org/obo/IAO_0000219) [species](http://purl.obolibrary.org/obo/TAXRANK_0000006)
-	- [species](http://purl.obolibrary.org/obo/TAXRANK_0000006) [Parent Name Usage ID](http://rs.tdwg.org/dwc/terms/parentNameUsageID) [https://www.gbif.org/taxon/62996](https://www.gbif.org/taxon/62996)
 	- [species](http://purl.obolibrary.org/obo/TAXRANK_0000006) [Taxon ID](http://rs.tdwg.org/dwc/terms/taxonID) [http://zoobank.org/urn:lsid:zoobank.org:act:E49B06F0-29F5-48C5-8D70-C01B24C257B7](http://zoobank.org/urn:lsid:zoobank.org:act:E49B06F0-29F5-48C5-8D70-C01B24C257B7)
+	- [species](http://purl.obolibrary.org/obo/TAXRANK_0000006) [Parent Name Usage ID](http://rs.tdwg.org/dwc/terms/parentNameUsageID) [https://www.gbif.org/taxon/62996](https://www.gbif.org/taxon/62996)
 - [male organism](http://purl.obolibrary.org/obo/UBERON_0003101) [Catalog Number](http://rs.tdwg.org/dwc/terms/catalogNumber) [http://id.luomus.fi/GAC.37187](http://id.luomus.fi/GAC.37187)
 ---
 - [male organism](http://purl.obolibrary.org/obo/UBERON_0003101), [length](http://purl.obolibrary.org/obo/PATO_0000122) = 3.7, unit: [millimeter](http://purl.obolibrary.org/obo/UO_0000016);
@@ -20,8 +21,8 @@
 	- [insect head](http://purl.obolibrary.org/obo/AISM_0000107), [anatomical collection](http://purl.obolibrary.org/obo/UBERON_0034925) [has member](http://purl.obolibrary.org/obo/RO_0002351) [cuticular puncture](http://purl.obolibrary.org/obo/AISM_0000524);
 	- [insect head](http://purl.obolibrary.org/obo/AISM_0000107), [anterior region](http://purl.obolibrary.org/obo/BSPO_0000071)
 		- [anterior region](http://purl.obolibrary.org/obo/BSPO_0000071), [anatomical collection](http://purl.obolibrary.org/obo/UBERON_0034925)
-			- [anatomical collection](http://purl.obolibrary.org/obo/UBERON_0034925) [has member](http://purl.obolibrary.org/obo/RO_0002351) [cuticular puncture](http://purl.obolibrary.org/obo/AISM_0000524);
 			- [anatomical collection](http://purl.obolibrary.org/obo/UBERON_0034925): [interpunctural distance](http://purl.obolibrary.org/obo/AISM_0000376);
+			- [anatomical collection](http://purl.obolibrary.org/obo/UBERON_0034925) [has member](http://purl.obolibrary.org/obo/RO_0002351) [cuticular puncture](http://purl.obolibrary.org/obo/AISM_0000524);
 		- [anterior region](http://purl.obolibrary.org/obo/BSPO_0000071): [rugose](http://purl.obolibrary.org/obo/PATO_0001359);
 	- [insect head](http://purl.obolibrary.org/obo/AISM_0000107), [frons](http://purl.obolibrary.org/obo/AISM_0004020), [cuticular tubercle](http://purl.obolibrary.org/obo/AISM_0000526)
 		- [cuticular tubercle](http://purl.obolibrary.org/obo/AISM_0000526) [coincident with](http://purl.obolibrary.org/obo/RO_0002008) [anatomical line](http://purl.obolibrary.org/obo/CARO_0000008)
@@ -42,9 +43,9 @@
 	- [pronotum](http://purl.obolibrary.org/obo/AISM_0000059): [trapezoid](http://purl.obolibrary.org/obo/PATO_0002044);
 - [male organism](http://purl.obolibrary.org/obo/UBERON_0003101), [elytron](http://purl.obolibrary.org/obo/COLAO_0000000)
 	- [elytron](http://purl.obolibrary.org/obo/COLAO_0000000), [anatomical collection](http://purl.obolibrary.org/obo/UBERON_0034925) [has member](http://purl.obolibrary.org/obo/RO_0002351) [elytral stria](http://purl.obolibrary.org/obo/COLAO_0000017)
-		- [elytral stria](http://purl.obolibrary.org/obo/COLAO_0000017) [has element count](https://github.com/sergeitarasov/PhenoScript/PHS_0000016) 8;
 		- [elytral stria](http://purl.obolibrary.org/obo/COLAO_0000017), [simple setigerous cuticular puncture](http://purl.obolibrary.org/obo/AISM_0000411): [diameter](http://purl.obolibrary.org/obo/PATO_0001334) [larger than](http://purl.obolibrary.org/obo/RO_0015007) [width](http://purl.obolibrary.org/obo/PATO_0000921) of [elytral stria](http://purl.obolibrary.org/obo/COLAO_0000017)
 		- [elytral stria](http://purl.obolibrary.org/obo/COLAO_0000017): [increased depth](http://purl.obolibrary.org/obo/PATO_0001596);
+		- [elytral stria](http://purl.obolibrary.org/obo/COLAO_0000017) [has element count](https://github.com/sergeitarasov/PhenoScript/PHS_0000016) 8;
 	- [elytron](http://purl.obolibrary.org/obo/COLAO_0000000), [elytral disc](http://purl.obolibrary.org/obo/COLAO_0000013), [anatomical collection](http://purl.obolibrary.org/obo/UBERON_0034925) [has member](http://purl.obolibrary.org/obo/RO_0002351) [elytral interstria](http://purl.obolibrary.org/obo/COLAO_0000018) has 2 [anatomical row](http://purl.obolibrary.org/obo/UBERON_0034926);
 	- [elytron](http://purl.obolibrary.org/obo/COLAO_0000000): [width](http://purl.obolibrary.org/obo/PATO_0000921) [larger than](http://purl.obolibrary.org/obo/RO_0015007) [width](http://purl.obolibrary.org/obo/PATO_0000921) of [pronotum](http://purl.obolibrary.org/obo/AISM_0000059)
 - [male organism](http://purl.obolibrary.org/obo/UBERON_0003101), [metathorax](http://purl.obolibrary.org/obo/AISM_0004127), [scutellum](http://purl.obolibrary.org/obo/AISM_0004146): absent;
