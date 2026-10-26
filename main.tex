@@ -13,6 +13,7 @@
 \usepackage{wasysym} %% for male & female symbols
 \usepackage{hyperref}
 \usepackage{natbib}
+\usepackage{url}
 
 
 %-----------------------------------------
@@ -46,21 +47,9 @@ renderers={
 %-----------------------------------------
 
 
-
-% \title{Review of \textit{Amietina} (Coleoptera: Scarabaeinae: Onthophagini) with semantic descriptions of two new species from the Eastern Arc Mountains}
-
-% \title{One-click semantic taxonomy: reviewing the Afrotropical dung beetle genus \textit{Amietina} Cambefort, 1981 (Coleoptera: Scarabaeinae) with Phenoscript, GitHub and Overleaf}
-
 \title{
 An integrated semantic publishing workflow for taxonomy: a review of the Afrotropical dung beetle genus \textit{Amietina} (Coleoptera: Scarabaeinae)
 }
-
-% From semantic phenotypes to publication: a1
-% taxonomic review of the Afrotropical dung2
-% beetle genus Amietina (Coleoptera:3
-% Scarabaeinae) using Phenoscript, GitHub,4
-% and Overleaf Do you think the title is good or can be improved?
-
 
 \author[1]{Giulio Montanaro}
 \author[2]{Neema Kilimba}
@@ -70,18 +59,6 @@ An integrated semantic publishing workflow for taxonomy: a review of the Afrotro
 \affil[2]{Tanzania Wildlife Research Institute (TAWIRI), P.O. Box 661, 206 Njiro Road, 2113 Lemara, Arusha, Tanzania}
 \corrauthor[1]{Giulio Montanaro}{giulio.montanaro@helsinki.fi}
 
-% \keywords{Keyword1, Keyword2, Keyword3}
-
-% \begin{abstract}
-% Modern taxonomy increasingly relies on digital infrastructures to improve transparency, reproducibility, and interoperability, yet many available tools remain disconnected within the taxonomic workflow. Here, we present an integrated approach combining semantic morphological descriptions in Phenoscript, version-controlled data management through GitHub, and collaborative manuscript preparation in Overleaf. By linking structured phenotypic data, manuscript development, and FAIR data publication standards, this workflow facilitates reproducible taxonomic research and improves the accessibility and reusability of taxonomic knowledge.
-
-% We apply this workflow to a review of the dung beetle genus \textit{Amietina} Cambefort, 1981 (Coleoptera: Scarabaeidae: Onthophagini), which we redefine to accomodate four new species from the Eastern Arc Mountains (Tanzania): \textit{A. bondarevi} \textbf{n. sp.}, \textit{A. grebennikovi} \textbf{n. sp.}, \textit{A. mazumbaiensis} \textbf{n. sp.} and \textit{A. praedicta} \textbf{n. sp.}. Furthermore, we describe the previously unknown female of \textit{A. nyassalandica} Branco, 1989 and provide an updated identification key to the genus. The newly described species represent the first documented case of mountain-block endemism among Eastern Arc dung beetles, highlighting the hidden diversity and conservation importance of these threatened rainforest ecosystems.
-
-% Together, this study demonstrates how integrated digital workflows can enhance the efficiency, reproducibility, and interoperability of taxonomic research.
-
-% \textbf{Keywords:} FAIR principles, collaborative writing, LaTex, new species, Onthophagini, Eastern Arc Mountains, Tanzania
-
-% \end{abstract}
 
 \begin{abstract}
 Taxonomic studies generate large amount of descriptive information, yet species treatments are usually written directly as natural-language text. This approach makes the underlying phenotypic information difficult to extract, reuse computationally, and maintain consistently across studies. 
@@ -122,7 +99,7 @@ Generating readable text, however, does not solve the problem if it must be copi
 
 The same connection also makes the wider manuscript easier to manage. GitHub keeps the descriptions, manuscript, bibliography, figures, and processing files together and preserves a history of their changes. Collaborators can see what was changed, compare versions, and recover earlier content. Overleaf provides a shared writing environment and automatically compiles these files into the formatted paper. This approach keeps the manuscript closer to its source data and makes collaboration more transparent and reproducible \citep{ram2013git, braga2023github, himmelstein2020open}. Because \LaTeX{} separates content from formatting, the same source can also be adapted to journal templates with less manual reformatting \citep{bar2021reproducible, krewinkel2017formatting}.
 
-Here, we use this workflow in a taxonomic review of the Afrotropical dung beetle genus \textit{Amietina} Cambefort, 1981 (Coleoptera: Scarabaeinae: Onthophagini). The genus currently contains four described species from forests in West, Central, and eastern Africa \citep{cambefort1981amietina, branco1989deux}. Material collected in the Eastern Arc Mountains of Tanzania revealed four additional species, broadening the morphological limits of the genus. The distributions of these species also add to the limited knowledge of dung beetle endemism across the Eastern Arc mountain blocks \citep{burgess2007biological, montanaro2024microallopatric}. Herein, we describe \textit{A. bondarevi} \textbf{n. sp.}, \textit{A. grebennikovi} \textbf{n. sp.}, \textit{A. mazumbaiensis} \textbf{n. sp.}, and \textit{A. praedicta} \textbf{n. sp.} as well as the previously unknown female of \textit{A. nyassalandica}. Additonally, we provide new distributional records, and present an updated identification key. Alongside these taxonomic contributions, we show how Phenoscript, GitHub, and Overleaf can connect semantic phenotype data directly to a publication-ready manuscript.
+Here, we use this workflow in a taxonomic review of the Afrotropical dung beetle genus \textit{Amietina} Cambefort, 1981 (Coleoptera: Scarabaeinae: Onthophagini). The genus currently contains four described species from forests in West, Central, and southeastern Africa \citep{cambefort1981amietina, branco1989deux}. Material collected in the Eastern Arc Mountains of Tanzania revealed four additional species, broadening the morphological limits of the genus, which is here redefined. The discovery of these species also add to the limited knowledge of dung beetle endemism across the Eastern Arc mountain blocks \citep{burgess2007biological, montanaro2024microallopatric}. Herein, we describe \textit{A. bondarevi} \textbf{n. sp.}, \textit{A. grebennikovi} \textbf{n. sp.}, \textit{A. mazumbaiensis} \textbf{n. sp.}, and \textit{A. praedicta} \textbf{n. sp.} as well as the previously unknown female of \textit{A. nyassalandica}. Additonally, we provide new distributional records, and present an updated identification key. Alongside these taxonomic contributions, we show how Phenoscript, GitHub, and Overleaf can connect semantic phenotype data directly to a publication-ready manuscript.
 
 
 
@@ -148,31 +125,6 @@ We used GitHub as the link between the local Phenoscript project and the Overlea
 We inserted each generated Markdown description directly into the corresponding taxonomic treatment with the \verb|\markdownInput{}| command from the \texttt{markdown} package. After a Phenoscript source file was revised, we regenerated its outputs, committed them to GitHub, and synchronized the repository with Overleaf. The next manuscript compilation then rendered the revised description without manual copying or Markdown-to-\LaTeX{} conversion. The Phenoscript file therefore remained the authoritative source for both the computable phenotype data and the description read in the manuscript.
 
 
-
-
-
-
-
-
-% \subsection*{Integration of Phenoscript, Github and Overleaf}
-
-% The preparation of this manuscript was done by integrating Phenoscript and Overleaf by linking them through GitHub using the following workflow (Fig. \ref{}):
-
-% \begin{enumerate}
-% \item Taxonomic descriptions are written with \href{https://github.com/sergeitarasov/PhenoScript}{PhenoScript}, which uses terms from anatomy ontologies to build computer-parsable taxonomic descriptions. We follow the general workflow developed in previous papers \citep{montanaro2024beyond, montanaro2024computable}, with only slight modifications in syntax and terminology. A complete annotation guide to write descriptions in the most consistent way can be found on \href{https://github.com/sergeitarasov/phenoscript-workshop-incol-2026/wiki/Annotation-Guide}{GitHub}. Files generated with Phenoscript include the yphs original code and its natural language-like translation in Markdown, consisting of human-readable text with hyperlinks to all anatomical terms used.
-
-% \item Manuscript preparation is performed in Overleaf, a cloud-based collaborative platform that uses the LaTeX document preparation system. LaTeX is a markup language widely used in scientific publishing that enables structured document creation and automated formatting of references, figures, tables, and other elements. Overleaf facilitates collaborative writing, version tracking, and the automatic rendering of the manuscript into a formatted PDF version, which can be easily used for submission and preprint publication.
-
-% \item Phenoscript files are uploaded to a GitHub repository which is then synchronised with the Overleaf project (Integrations > GitHub: Sync with a GitHub repository). Synchronisation allows to upload on the repository all files involved in the project, including the Tex file with the main manuscript text, figures, and references. The GitHub repository is managed via GitHub Desktop, an application that enables users to create a local copy of the repository on their computers, where files can be edited, version-controlled, and synchronized with the online repository through commits and pushes.
-
-% \item Once the Overleaf project is synchronised with GitHub, the natural language-like descriptions in Markdown were automatically incorporated and rendered within the LaTeX draft of the manuscript using the \texttt{\textbackslash markdownInput\{\}} function. This integration ensures that descriptions are automatically updated in the manuscript whenever the corresponding files are modified in GitHub, reducing the risk of transcription errors and avoiding manual copy-pasting or formatting issues associated with Markdown-to-LaTeX conversion.
-
-% \end{enumerate}
-
-
-% Moreover, the nomenclatural acts establishing the new species names were published, in addition to the regular Zoobank registration, in the form of nanopublications. Nanopubs were realised in \href{https://nanodash.petapico.org/publish?}{nanodash} using the \href{https://nanodash.petapico.org/publish?11&template=https://w3id.org/np/RAa7sIgQ77jJL4HYYGVH8sNu1YEKCH3F-CHqHrgbWWGS4}{format for defining new taxa} already tested by \cite{montanaro2024beyond}. Collecting data of all examined specimens were formatted in DarwinCore and are available in the supplementary material.
-
-
 \subsection*{Semantic descriptions using Phenoscript}
 
 We prepared separate Phenoscript descriptions for \textit{Amietina bondarevi}, \textit{A. grebennikovi}, \textit{A. mazumbaiensis}, and \textit{A. praedicta}, following the approach of \citet{montanaro2024beyond} and \citet{montanaro2024computable}. To keep descriptions consistent among species, we used the same order of anatomical regions and followed the project \href{https://github.com/sergeitarasov/phenoscript-workshop-incol-2026/wiki/Annotation-Guide}{annotation guide}. Comments in the \texttt{.yphs} files record the corresponding conventional wording and make the semantic statements easier to review.
@@ -183,9 +135,7 @@ We processed each source description to produce an OWL representation of the phe
 
 
 \subsection*{Material examined and morphology}
-According to the identification key by \cite{orbigny1913synopsis} on African Onthophagini, the new species could belong to the \textit{Onthophagus} species-groups 3 (females) or 19 (males; dichotomy 41(34)). The comparison with the original descriptions of all valid species of those groups did not result in any correspondence.
-
-Both male and female specimens of all described \textit{Amietina} species were examined, except for \textit{A. nyassalandica} of which we studied a single female, while male characters were retrieved from the detailed original description by \cite{branco1989deux}. Although we did not examine type material of any of the species, we studied specimens of \textit{A. cambeforti}, \textit{A. eburnea} and \textit{A. larrochei} coming from the same collecting events of those examined by \cite{branco1989deux} and on whose correct identification we have no doubts. 
+Male and female specimens of all described \textit{Amietina} species were examined, except for \textit{A. nyassalandica} of which we studied a single female, while male characters were retrieved from the detailed original description by \cite{branco1989deux}. Although we did not examine type material of any of the species, we studied specimens of \textit{A. cambeforti}, \textit{A. eburnea} and \textit{A. larrochei} coming from the same collecting events of those examined by \cite{branco1989deux} and on whose correct identification we have no doubts. Field work and collection of specimens in Tanzania was authorised by the Tanzania Wildlife Research Institute (TAWIRI) (clearance AB.235/325/01"A"/61) and the Tanzania Commission for Science and Technology (COSTECH) (permit CST00001334-2025-2025-00982).
 Studied specimens are preserved in the following collections:
 
 MZHF--Finnish Museum of Natural History LUOMUS, Helsinki, Finland; 
@@ -194,9 +144,11 @@ GMOC--Giulio Montanaro personal collection, Creazzo, Italy;
 
 JFJC--Jean-Fran\c{c}ois Josso personal collection, Muzillac, France;
 
-An additional specimen from the Rubeho Mountains putatively attributable to \textit{Amietina sensu novo} was identified among the samples registered in the \href{https://boldsystems.org/}{Barcode of Life Database} (BOLD) (unique ID: \href{https://boldsystems.org/index.php/Public_RecordView?processid=VGH254-12}{CNCCOLVG00004064}) by the colleague Vasily Grebennikov (Canadian Food Inspection Agency, Ottawa, Canada). However, despite the kind efforts of V. Grebennikov and Bruce Gill (Canadian National Collection of Insects, Ottawa, Canada), it was not possible to locate the physical voucher, which shall be considered lost. We therefore do not treat that specimen here.
+An additional specimen from the Rubeho Mountains putatively attributable to \textit{Amietina} was identified among the samples registered in the \href{https://boldsystems.org/}{Barcode of Life Database} (BOLD) (unique ID: \href{https://boldsystems.org/index.php/Public_RecordView?processid=VGH254-12}{CNCCOLVG00004064}) by the colleague Vasily Grebennikov (Canadian Food Inspection Agency, Ottawa, Canada). However, despite the kind efforts of V. Grebennikov and Bruce Gill (Canadian National Collection of Insects, Ottawa, Canada), it was not possible to locate the physical voucher, which shall be considered lost. We therefore do not treat that specimen here.
 
-Morphological terminology and protocols follow \cite{montanaro2024computable} and \cite{tarasov2011phylogenetic}. For male genitalia, the length of the phallobase was measured from the middle of the antero-dorsal bulge to the middle of the postero-dorsal margin; parameral length was measured from the postero-dorsal angle to the apex (\textit{i.e.}, the distalmost part) of the left paramere. Pictures of morphology were taken with a Canon EOS 5DS and those of genitalia with a Canon EOS 250D connected to a stereomicroscope. The distribution map was realised in QGIS \citep{QGIS_software} and Eastern Arc forests outlined using the Terrestrial Ecoregions of the World layer \citep{olson2001terrestrial}.
+According to the identification key by \cite{orbigny1913synopsis} on African Onthophagini, the new species could belong to the \textit{Onthophagus} species-groups 3 (females) or 19 (males; dichotomy 41(34)). The comparison with the original descriptions of all valid species of those groups did not result in any correspondence.
+
+Morphological terminology and protocols follow \cite{montanaro2024computable} and \cite{tarasov2011phylogenetic}. For male genitalia, the length of the phallobase was measured from the middle of the antero-dorsal bulge to the middle of the postero-dorsal margin; parameral length was measured from the postero-dorsal angle to the apex (\textit{i.e.}, the distalmost part) of the left paramere. Pictures of morphology were taken with a Canon EOS 5DS and those of genitalia with a Canon EOS 250D connected to a stereomicroscope. The distribution map was realised in QGIS \citep{QGIS_software} and Eastern Arc forests outlined using the WWF Terrestrial Ecoregions layer \citep{olson2001terrestrial}.
 
 For holotype labelling, we use “//” to separate different labels and “/” to separate lines on the same label. Comments to labels are given between square brackets. The following abbreviations are used: wc (white cardboard), rc (red cardboard), hb (handwritten in black), pb (printed in black).
 
@@ -231,11 +183,11 @@ The following two characters, previously used to define the genus, are here reco
 
 \textbf{Distribution}. The genus is endemic to the Afrotropical region.
 
-\textbf{Remarks}. \textit{Amietina sensu novo} maintains a substantially similar definition to its previous concept \citep{branco1989deux, cambefort1981amietina}. The only differences are that the distal margin of protibiae can be either perpendicularly (as in the previous concept, except for \textit{A. larrochei}) or obliquely truncated, and that the head can be either unarmed (previous concept) or with protrusions (new concept). Furthermore, \textit{Amietina} species are characterised by a lamella copulatrix formed by 3 separate sclerites characteristically arranged (Figs. \ref{fig:fig5}E--I). The only exception is \textit{A. bondarevi}, which has only 2 evident sclerites, but this may be due to the poor sclerification of the endophallus of the only examined specimen, which may have rendered the third, smaller sclerite less clearly visible.
+\textbf{Remarks}. \textit{Amietina sensu novo} maintains a substantially similar definition to its previous concept \citep{branco1989deux, cambefort1981amietina}. The only differences are that the distal margin of protibiae can be either perpendicularly (as in the previous concept, except for \textit{A. larrochei}) or obliquely truncated (new concept), and that the head can be either unarmed (previous concept) or with protrusions (new concept). Furthermore, \textit{Amietina} species are characterised by a lamella copulatrix formed by 3 separate sclerites characteristically arranged (Figs. \ref{fig:fig5}E--I). The only exception is \textit{A. bondarevi}, which has only 2 evident sclerites, but this may be due to the poor sclerification of the endophallus of the only examined specimen, which may have rendered the third, smaller sclerite less clearly visible.
 
 Based on morphology, the genus can be subdivided into three operational species-groups:
 \begin{enumerate}
-    \item \textit{Amietina larrochei} species-group, characterized by: 1) head without protrusions in both sexes, surface at most swollen medially (Figs. \ref{fig:fig3}A--D); 2) distal margin of male protibiae perpendicularly truncated or almost so (Figs. \ref{fig:fig3}J,L); 3) proximal region of endophallus without raspulae (Figs. \ref{fig:fig4}A,E); 4) pronotal punctuation from uniform to irregular, occasionally with some distinctly smaller punctures intermixed with bigger ones (\textit{A. larrochei}) or with micropunctuation (\textit{A. nyassalandica}) (Fig. \ref{fig:fig1}). The group comprises \textit{A. cambeforti} Branco, 1989, \textit{A. eburnea} Cambefort, 1981, \textit{A. larrochei} Cambefort, 1981 and, putatively, as we could not examine male genitalia, \textit{A. nyassalandica} Branco, 1989.
+    \item \textit{Amietina larrochei} species-group, characterized by: 1) head without protrusions in both sexes, surface at most swollen medially (Figs. \ref{fig:fig3}A--D); 2) distal margin of male protibiae perpendicularly truncated or almost so (Figs. \ref{fig:fig3}J,L); 3) proximal region of endophallus without raspulae (Figs. \ref{fig:fig4}A,E); 4) pronotal punctures with uniform to irregular size, occasionally with some distinctly smaller punctures intermixed with bigger ones (\textit{A. larrochei}) or with micropunctuation (\textit{A. nyassalandica}) (Fig. \ref{fig:fig1}). The group comprises \textit{A. cambeforti} Branco, 1989, \textit{A. eburnea} Cambefort, 1981, \textit{A. larrochei} Cambefort, 1981 and, putatively, as we could not examine male genitalia, \textit{A. nyassalandica} Branco, 1989.
     \item \textit{Amietina mazumbaiensis} species-group, characterized by: 1) head with a tubercle between the anterior margin of the eyes (males) or a short, arched carina on the frons (females) (Figs. \ref{fig:fig3}E--H); 2) distal margin of male and female protibiae obliquely truncated (Figs. \ref{fig:fig3}M--N); 3) proximal region of endophallus with raspulae (Figs. \ref{fig:fig5}A--C); 4) pronotal punctuation clearly heterogeneous, composed of larger punctures intermixed with many smaller ones. The group comprises \textit{A. grebennikovi} \textbf{n. sp.}, \textit{A. mazumbaiensis} \textbf{n. sp.} and \textit{A. praedicta} \textbf{n. sp}.
     \item \textit{Amietina bondarevi} species-group, characterized by: 1) head with a short carina between the anterior margin of the eyes (Fig. \ref{fig:fig3}I); 2) distal edge of protibiae obliquely truncated (Fig. \ref{fig:fig3}O); 3) proximal region of endophallus without raspulae (Fig. \ref{fig:fig5}D); 4) pronotal punctuation clearly heterogeneous, composed of larger punctures intermixed with many smaller ones. The group comprises the only \textit{A. bondarevi} \textbf{n. sp}.
 \end{enumerate}
@@ -355,7 +307,7 @@ urn:lsid:zoobank.org:act:352E8138-107D-477F-A6FA-B8215B26BC52
 
 \textbf{Variation.} No significant variation was observed.
 
-\textbf{Etymology.} We are glad to dedicate this new species to his collector, the colleague Vasily V. Grebennikov, who has been sampling arthropods extensively in the Eastern Arc Mountains using soil sifting. His efforts with this challenging technique have already disclosed extremely interesting dung beetles, and inspired GM to look for more.
+\textbf{Etymology.} We are glad to dedicate this new species to its collector, the colleague Vasily V. Grebennikov, who has been sampling arthropods extensively in the Eastern Arc Mountains using soil sifting. His efforts with this challenging technique have already disclosed extremely interesting dung beetles, and inspired GM to look for more.
 
 \textbf{Biology.} The new species was collected by sifting litter in the wet forest at the foothills of the Udzungwa Mountains, of which it may be endemic. Similarly to other \textit{Amietina}, it may have non-strictly coprophagous habits such as saprophagy and/or necrophagy.
 
@@ -422,7 +374,7 @@ urn:lsid:zoobank.org:act:27768583-2426-4AF1-B02C-BD37CC2B9917
 
 \textbf{Variation.} Body size is 3.7 mm in the only male examined and 3.6 mm in the only female. The female has a light greenish bronze hue on pronotum and head which is missing from the male, which has just a feeble cupreous hue on the head.
 
-\textbf{Etymology.} The specific epithet \textit{praedicta} is a Latin adjective in the feminine form meaning ``predicted". After the initial discovery of \textit{A. mazumbaiensis} in the Usambara Mountains and \textit{A. grebennikovi} in the Udzungwas, GM hypothesized that closely related species may exist in the Uluguru Mountains and other massifs of the Eastern Arc. What a rewarding moment it was when, a few months later, he collected a female of \textit{A. praedicta} and, two years later, a male!
+\textbf{Etymology.} The specific epithet \textit{praedicta} is a Latin adjective in the feminine form meaning ``predicted". After the initial discovery of \textit{A. mazumbaiensis} in the Usambara Mountains and \textit{A. grebennikovi} in the Udzungwas, GM hypothesized that closely related species may exist in the Uluguru Mountains and other massifs of the Eastern Arc. What a rewarding moment it was when he found \textit{A. praedicta} in the Ulugurus!
 
 \textbf{Biology.} \textit{A. praedicta} was found in Afromontane rainforest next to the Bondwa and Lupanga peaks, in the northern part of the Uluguru Mountains Nature Forest Reserve, between 1260 and 1850m a.s.l. It was collected in traps baited with injured millipedes or human dung. It is probably endemic to the Uluguru Mountains.
 
@@ -512,9 +464,9 @@ This study shows that semantic descriptions can be used throughout a complete ta
 
 
 
-\subsection*{Paragraph on Amietina to be added at the end}
+\subsection*{\textit{Amietina} microendemism in the Eastern Arc Mountains}
 
-The Eastern Arc Mountains in Tanzania and Kenya are one of the most important hotspots of biodiversity on the earth, hosting an exaggerated amount of endemic plant and animal species \citep{burgess2007biological}. However, dung beetle diversity in the EAMs is virtually unknown. The only available study on the subject reported an instance of microallopatric speciation within a single mountain block in the epactoidine genus \textit{Grebennikovius} Mlambo, Sole \& Scholtz, 2019 \citep{montanaro2024microallopatric}, but nothing is known about the patterns of endemism of other dung beetle lineages. The \textit{Amietina} species described here are likely endemic to the separate mountains where they were discovered. In particular, \textit{A. grebennikovi}, \textit{A. mazumbaiensis}, and \textit{A. praedicta} form a complex of morphologically very similar species that may have originated through allopatric speciation in the Udzungwa, West Usambara, and Uluguru Mountains, respectively, making them the first documented case of microendemism in which separate EAM mountains host different, strictly related dung beetle species. This suggests that additional \textit{Amietina} species occur in other EAM regions, including the Rubeho Mountains, where a putative \textit{Amietina} specimen was collected (see Methods) but could not be examined in the present study.
+The Eastern Arc Mountains in Tanzania and Kenya are one of the most important hotspots of biodiversity on the Earth, hosting an exaggerated amount of endemic plant and animal species \citep{burgess2007biological}. However, dung beetle diversity in the EAMs is virtually unknown. The only available study on the subject reported an instance of microallopatric speciation within a single mountain block in the epactoidine genus \textit{Grebennikovius} Mlambo, Sole \& Scholtz, 2019 \citep{montanaro2024microallopatric}, but nothing is known about endemism of other dung beetle lineages. The \textit{Amietina} species described here are likely endemic to the separate mountains where they were discovered. In particular, \textit{A. grebennikovi}, \textit{A. mazumbaiensis}, and \textit{A. praedicta} form a complex of morphologically very similar species that may have originated through allopatric speciation in the Udzungwa, West Usambara, and Uluguru Mountains, respectively, making them the first documented case of microendemism in which separate EAM forests host different, strictly related dung beetle species. This suggests that additional \textit{Amietina} species occur in other EAM regions, including the Rubeho Mountains, where a putative \textit{Amietina} specimen was collected (see Methods) but could not be examined in the present study. An ongoing survey shows that this pattern is probably widespread across EAMs dung beetles, whose fauna is largely undescribed (unpublished data) and will be the target of future contributions.
 
 
 \section*{Conclusions}
@@ -523,15 +475,11 @@ Taxonomy must keep pace with the rapid development of digital biology. Although 
 
 This study demonstrates that semantic species descriptions can be incorporated into a complete taxonomic revision and carried directly from their computable source into a publication-ready manuscript. The integrated use of Phenoscript, GitHub, and Overleaf provides a practical model for producing taxonomic treatments that remain readable to taxonomists while being available for computational reuse.
 
-The revision also reveals previously undocumented diversity in the Eastern Arc Mountains by adding four new species of \textit{Amietina}. Their restricted distributions provide further evidence that separate mountain blocks harbour distinct dung beetle faunas and emphasize the importance of documenting the remaining rainforest fragments. Together, these methodological and taxonomic results show how structured digital approaches can support both the study of biodiversity and the preservation of the knowledge derived from it.
-
-
-
-
-
+The revision also reveals previously undocumented diversity in the Eastern Arc Mountains by adding four new species of \textit{Amietina}. Their restricted distributions provide further evidence that separate mountain blocks harbor distinct dung beetle faunas and emphasize the importance of documenting the remaining rainforest fragments. Together, these methodological and taxonomic results show how structured digital approaches can support both the study of biodiversity and the preservation of the knowledge derived from it.
 
 \section*{Acknowledgements}
-We are sincerely grateful to: Vasily V. Grebennikov (Canadian Food Inspection Agency, Ottawa, ON, Canada) for entrusting us with the invaluable dung beetle material collected on the EAMs; Jean-Fran\c{c}ois Josso (Muzillac, France) for allowing us to study the female of \textit{Amietina nyassalandica}; Jaakko Mattila, Lotta Leinonen, Olof Biström and Pekka Vilkamaa (MZH) for their help in Helsinki; Philippe Moretto (Toulon, France) and Fernando Vaz-de-Mello (Universidade Federal de Mato Grosso, Cuiab\'a, Brasil) for sharing their scarab bibliography. GM's field work in Tanzania was authorised by the Tanzania Wildlife Research Institute (TAWIRI), the Tanzania Commission for Science and Technology (COSTECH) and the TAMISEMI (permits CST00001334-2025-2025-00982 and JC.156/254/07). GM is deeply grateful to the Tanzanian authorities and collaborators that helped obtaining permits and developing his project on EAMs dung beetles: Neema Kilimba, Alain Pauly, Wilfred Sengo (TAWIRI), Prof. Abdalla Jumanne and XXX (Sokoine University of Agriculture). This study was supported by  the Research Council of Finland (grants 361983, 346294, and 369299). 
+We are indebted to: Vasily V. Grebennikov (Canadian Food Inspection Agency, Ottawa, ON, Canada) for entrusting us with the invaluable dung beetle material collected on the EAMs; Jean-Fran\c{c}ois Josso (Muzillac, France) for allowing us to study the female of \textit{Amietina nyassalandica}; Jaakko Mattila, Lotta Leinonen, Olof Biström and Pekka Vilkamaa (MZH) for their help in Helsinki; Philippe Moretto (Toulon, France) and Fernando Vaz-de-Mello (Universidade Federal de Mato Grosso, Cuiab\'a, Brasil) for sharing their scarab bibliography. We thank the Tanzania Wildlife Research Institute (TAWIRI) and the Tanzania Commission for Science and Technology (COSTECH) fo releasing the necessary research permits. GM is sincerely grateful to the Tanzanian authorities and collaborators that helped obtaining permits and developing a project on EAMs dung beetles, including Alain Pauly (TAWIRI) and Prof. Abdallah Jumanne and Maulid Mwatawala (Sokoine University of Agriculture). 
+%This study was supported by the Research Council of Finland (grants 361983, 346294, and 369299); field work was supported by the Linnean Society of London's Percy Sladen Memorial Fund 2025, awarded to GM.
 
 
 \begin{figure}[ht]
@@ -580,8 +528,7 @@ We are sincerely grateful to: Vasily V. Grebennikov (Canadian Food Inspection Ag
 \begin{figure}[ht]
 \centering
 \includegraphics[width=\linewidth]{map.jpg}
-\caption{Distribution and habitat of \textit{Amietina} species. Map showing the distribution of \textit{A. bondarevi} \textbf{n. sp.}, \textit{A. grebennikovi} \textbf{n. sp.}, \textit{A. mazumbaiensis} \textit{n. sp.} and \textit{A. praedicta} \textbf{n. sp.} in Tanzania, with the boundaries of the Eastern Arc Mountains ecoregion highlighted in green (A); rainforest edge (B) and vegetation (C) at the foothills of the northern Uluguru Mountains close to the Lupanga Peak, type locality of \textit{A. praedicta} (pictures by G. Montanaro).}
-\label{fig:map}
+\caption{Distribution and habitat of \textit{Amietina} species. Map showing the distribution of \textit{A. bondarevi} \textbf{n. sp.}, \textit{A. grebennikovi} \textbf{n. sp.}, \textit{A. mazumbaiensis} \textit{n. sp.} and \textit{A. praedicta} \textbf{n. sp.} in Tanzania, with the boundaries of the Eastern Arc Mountains ecoregion highlighted in green (A); rainforest edge (B) and vegetation (C) at the foothills of the northern Uluguru Mountains close to the Lupanga Peak, type locality of \textit{A. praedicta} (pictures by G. Montanaro). Map data sources: \href{https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer}{ESRI World Imagery} and \href{https://www.arcgis.com/home/item.html?id=6d835e25faf0493dacc6a16dc0a99072}{WWF Terrestrial Ecoregions}.}
 \end{figure}
 
 \bibliography{sample}
